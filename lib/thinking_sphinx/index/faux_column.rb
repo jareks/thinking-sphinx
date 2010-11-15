@@ -91,6 +91,10 @@ module ThinkingSphinx
       #   col.__name  #=> :three
       #   col.__stack #=> [:a, :b, :one, :two]
       #
+      def to_ary
+        [self]
+      end
+
       def method_missing(method, *args)
         @stack << @name
         @name   = method
